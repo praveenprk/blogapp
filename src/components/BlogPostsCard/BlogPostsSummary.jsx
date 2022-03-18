@@ -50,9 +50,10 @@ setTimeout(() => {
                     : (<Grid className="post-card" item key={i} md={6} sm={6} xs={12} lg={4}>
                         <h3>
                             <Link to={`/posts/${blogPost.id}`}>
-                                {blogPost.title.toUpperCase()}
+                                {blogPost.title.toUpperCase()} 
                             </Link>
                         </h3>
+                        <img width={250} height={150} src="https://bryantparkpt.com/wp-content/uploads/2020/07/blog-img-1200x802.jpg" alt="blog-dummy" />
                         <p className='post-body'>
                             {blogPost.body}
                         </p>
