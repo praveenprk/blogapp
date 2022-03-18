@@ -1,0 +1,28 @@
+.user-basic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.user-cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.user-card {
+    position: relative;
+    top:20%;
+    bottom: 20%;
+}
+
+.avatar {
+    transition: transform .3s;
+}
+
+.avatar:hover {
+    transition: transform .3s;
+    transform: scale(1.5);
+}
