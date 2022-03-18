@@ -6,6 +6,7 @@ import ViewBlogPost from "../components/ViewBlogPost/ViewBlogPost";
 import Header from "../partials/Header";
 import Albums from "../components/Albums/Albums";
 import ViewAlbum from "../components/ViewAlbum/ViewAlbum";
+import Users from "../components/Users/Users";
 
 
 const Routers = () => {
@@ -22,6 +23,7 @@ const Routers = () => {
             <Route path="/albums" element={<Albums/>}/>
             
             <Route path="/viewAlbum/:id" element={<ViewAlbum/>}/>
+            <Route path="/users" element={<Users/>}/>
         </Routes>
     </BrowserRouter>
   )
