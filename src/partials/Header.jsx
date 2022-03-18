@@ -17,6 +17,7 @@ const Header = () => {
                 <Link to='/blog'>Blog</Link>
                 <Link to='/albums'>Albums</Link>
                 <Link to='/todos'>Todos</Link>
+                <Link to='/users'>Users</Link>
                 <Link to='my-account'><AccountCircleIcon /></Link>
             </Box>
 
