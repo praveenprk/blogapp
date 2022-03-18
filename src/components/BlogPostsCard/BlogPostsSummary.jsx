@@ -17,7 +17,15 @@ const BlogPostsSummary = () => {
         .catch(err => console.log(err))
     }
     fetchPosts()
+    
+    //perform cleanup
+    return() => {
+        setBlogPosts(null)
+        setLoading(null)
+    }
+    
 },[])
+
 
 setTimeout(() => {
     setLoading(false)
@@ -33,13 +41,13 @@ setTimeout(() => {
             gap: "2rem"
         }}>
             {
-            blogPosts && blogPosts.map(blogPost => {
+            blogPosts && blogPosts.map((blogPost,i) => {
                 return (
                     loading ? (
-                    <Skeleton md={6} sm={6} xs={12} lg={3} key={blogPost.id} variant="rectangular" width={300}
+                    <Skeleton md={6} sm={6} xs={12} lg={4} key={i} variant="rectangular" width={300}
                     height={400}/>
                     )
-                    : (<Grid className="post-card" item key={blogPost.id} md={6} sm={6} xs={12} lg={4}>
+                    : (<Grid className="post-card" item key={i} md={6} sm={6} xs={12} lg={4}>
                         <h3>
                             <Link to={`/posts/${blogPost.id}`}>
                                 {blogPost.title.toUpperCase()}
