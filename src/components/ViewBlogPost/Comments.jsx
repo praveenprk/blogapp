@@ -14,7 +14,7 @@ const Comments = (props) => {
             .then(res => setComments(res.data)).catch(err => console.log(err))
         }
         fetchComments()
-    })
+    },[])
 
   return (
       <Container sx={{
