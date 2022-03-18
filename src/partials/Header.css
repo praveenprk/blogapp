@@ -1,0 +1,8 @@
+ul, li, a, h1, h2, h3, h6 {
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+    transition: text-decoration 5s ease-in-out;
+}
