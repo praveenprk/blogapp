@@ -4,6 +4,8 @@ import React from 'react'
 import BlogPostsSummary from "../components/BlogPostsCard/BlogPostsSummary";
 import ViewBlogPost from "../components/ViewBlogPost/ViewBlogPost";
 import Header from "../partials/Header";
+import Albums from "../components/Albums/Albums";
+import ViewAlbum from "../components/ViewAlbum/ViewAlbum";
 
 
 const Routers = () => {
@@ -14,7 +16,12 @@ const Routers = () => {
             <Route path="/" element={<App/>}>
               <Route path="blog" element={<BlogPostsSummary/>}/>
             </Route>
+
             <Route path="/posts/:id" element={<ViewBlogPost/>}/>
+            
+            <Route path="/albums" element={<Albums/>}/>
+            
+            <Route path="/viewAlbum/:id" element={<ViewAlbum/>}/>
         </Routes>
     </BrowserRouter>
   )
