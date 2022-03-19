@@ -37,7 +37,7 @@ return (
     <Grid container sx={{
         justifyContent: "center",
         alignItems: "center",
-        gap: "1em",
+        gap: "2em",
         padding: '2em',
     }}>
     {
@@ -49,7 +49,7 @@ return (
                     backgroundColor: '#f2f2f2',
                     border: "1px solid transparent",
                     borderRadius: "10px",
-                    height: "200px",
+                    height: "150px",
                     filter: "drop-shadow(2px 4px 6px black)"
                 }}>
                     <div className='user-card'>

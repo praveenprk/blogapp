@@ -16,9 +16,6 @@ const ViewAlbum = () => {
       .catch(err => console.log(err))
     }
     getPhotos()
-    return () => {
-      setPhotos(null)
-    }
   })
 
   
