@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Blog App",
+  "name": "Simple Blog App",
+  "description": "A simple blog app created by using JSON Typicode Placeholder",
   "icons": [
     {
       "src": "favicon.ico",
