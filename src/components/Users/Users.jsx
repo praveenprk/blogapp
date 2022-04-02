@@ -9,27 +9,22 @@ import LanguageIcon from '@mui/icons-material/Language';
 import {Grid} from '@mui/material/'
 import { pink, blue, red } from '@mui/material/colors'
 import './Users.css'
+import { Link } from 'react-router-dom';
 
 const Users = () => {
   
 const [users, setUsers] = useState([])
 
-
-useEffect(() => {
-  const fetchUsers = async () => {
+const fetchUsers = async () => {
     await axios.get(`https://jsonplaceholder.typicode.com/users`)
     .then(res => setUsers(res.data))
     .catch(err => console.log(err))
   }
 
+
+useEffect(() => {
   fetchUsers()
-
-/* return () => {
-    second
-  } */
 }, [])
-
-console.log(users)
   
 return (
     <>
@@ -60,7 +55,9 @@ return (
                         src="https://mui.com/static/images/avatar/1.jpg"
                         sx={{ width: 56, height: 56 }}
                         />
-                        <Typography variant='h6'>{user.name}</Typography>
+                        <Link to={`/users/${user.id}`}>
+                            <Typography variant='h6'>{user.name}</Typography>
+                        </Link>
                     </div>
                     <div className='user-cta'>
                     <IconButton aria-label="email">
