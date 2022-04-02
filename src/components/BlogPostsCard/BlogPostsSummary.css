@@ -3,6 +3,10 @@ h1, h2, h3, a {
     color: #fff;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 html {
     color: #fff;
 }
