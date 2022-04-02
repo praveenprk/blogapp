@@ -14,14 +14,18 @@ const ViewBlogPost = () => {
     
     const fetchBlogPost = async () => {
         await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
-        .then(res => setBlogPost(res.data))
+        .then(res => 
+            {
+                setBlogPost(res.data)
+                document.title = res.data.title
+            }
+            )
         .catch(err => console.log(err))
         }
 
     useEffect(()=>{
         fetchBlogPost()
-        document.title = `Viewing Blog ${id}`
-    }, []) 
+    }, [])
 
     return (
     <div>

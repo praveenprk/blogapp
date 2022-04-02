@@ -7,7 +7,9 @@ import { useDispatch } from "react-redux"
 import DetailsAccordion from './DetailsAccordion'
 import './UserProfile.css'
 import { getUsers } from '../../features/users/users'
-import Counter from './Counter'
+import BlogCounter from './BlogCounter'
+import CommentsCounter from './CommentsCounter'
+import AlbumsCounter from './AlbumsCounter'
 
 const UserProfile = () => {
     
@@ -21,6 +23,7 @@ const UserProfile = () => {
         await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
          .then(res => 
             {
+                document.title = res.data.name
                 setUser(res.data)
                 dispatch(getUsers(res.data))
             }
@@ -85,9 +88,9 @@ const UserProfile = () => {
       className='count-stack'
       direction={{ xs: 'column', sm: 'row', md: 'row', lg: 'row' }}
       spacing={{ xs: 1, sm: 2, md: 4 }}>
-        <Counter countFor='blogs'/>
-        <Counter countFor='comments'/>
-        <Counter countFor='albums'/>
+        <BlogCounter/>
+        <CommentsCounter/>
+        <AlbumsCounter/>
     </Stack>
   </Grid>
 

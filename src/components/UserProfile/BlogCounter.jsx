@@ -1,8 +1,21 @@
 import { Stack, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useState, useEffect } from 'react'
 
-const Counter = (props) => {
+const Counter = () => {
+    
+    const [count, setCount] = useState(0)
 
+    const getBlogCount = async () => {
+        await axios.get(`https://jsonplaceholder.typicode.com/posts`)
+        .then(res => {setCount(res.data.length)
+        })
+        .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+      getBlogCount()
+    }, [])
 
   return (
     <Stack sx={{
@@ -15,14 +28,14 @@ const Counter = (props) => {
     <Typography variant='h4' sx={{
         margin: 'auto'
     }}>
-        50
+        {count}
     </Typography>
     <Typography variant='h6' sx={{
         textAlign: 'center',
         margin: 'auto',
 
     }}>
-        {props.countFor}
+        Blog
     </Typography>
     </Stack>
   )
