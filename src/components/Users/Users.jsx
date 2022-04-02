@@ -24,6 +24,7 @@ const fetchUsers = async () => {
 
 useEffect(() => {
   fetchUsers()
+  document.title = 'All Users'
 }, [])
   
 return (

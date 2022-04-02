@@ -17,6 +17,7 @@ const BlogPostsSummary = () => {
         .catch(err => console.log(err))
     }
     fetchPosts()
+    document.title = 'All Blog Posts'
     
     //perform cleanup
     return() => {
