@@ -15,10 +15,8 @@ const Routers = () => {
     <BrowserRouter>
         <Header/>
         <Routes>
-            <Route path="/" element={<App/>}>
-              <Route index path="blog" element={<BlogPostsSummary/>}/>
-            </Route>
-
+            <Route index path="/" element={<App/>}/>
+            <Route path="blog" element={<BlogPostsSummary/>}/>
             <Route path="/posts/:id" element={<ViewBlogPost/>}/>
             
             <Route path="/albums" element={<Albums/>}/>
