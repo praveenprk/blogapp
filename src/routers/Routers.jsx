@@ -16,7 +16,7 @@ const Routers = () => {
         <Header/>
         <Routes>
             <Route path="/" element={<App/>}>
-              <Route path="blog" element={<BlogPostsSummary/>}/>
+              <Route index path="blog" element={<BlogPostsSummary/>}/>
             </Route>
 
             <Route path="/posts/:id" element={<ViewBlogPost/>}/>
