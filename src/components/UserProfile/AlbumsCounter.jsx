@@ -20,7 +20,7 @@ const AlbumsCounter = () => {
     console.log(count)
 
   return (
-    <Stack sx={{
+    <Stack className='counter-sq' sx={{
         backgroundColor: 'white',
         border: '0px solid white',
         borderRadius: '10px',
