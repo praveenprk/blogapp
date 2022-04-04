@@ -26,7 +26,6 @@ const Routers = () => {
             <Route path="/users" element={<Users/>}/>
             <Route path="/users/:id" element={<UserProfile/>}/>
         </Routes>
-        <AddPostFloat/>
     </BrowserRouter>
   )
 }

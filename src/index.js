@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer'
 import './index.css'
 import Routers from './routers/Routers'
 import { store } from './store/store'
+import './App.css';
 
 ReactDOM.render(
   <React.StrictMode>
