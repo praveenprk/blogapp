@@ -19,6 +19,13 @@ const UserProfile = () => {
 
     const [user, setUser] = useState({})
 
+    const [follow, setFollow] = useState(false)
+
+    const handleFollow = (e) => {
+        e.preventDefault()
+        follow ? setFollow(false) : setFollow(true)
+    }
+
     const getUserData = async () => {
         await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
          .then(res => 
@@ -70,7 +77,11 @@ const UserProfile = () => {
         fontWeight: '500'
     }}>{user.username}</Typography>
     <Stack spacing={2} direction="row">
-        <Button variant="contained">Follow</Button>
+        <Button variant="contained" onClick={(e)=>handleFollow(e)}>
+            {
+                follow ? 'Unfollow' : 'Follow'
+            }
+        </Button>
         <Button variant="outlined">Message</Button>
     </Stack>
 </Stack>
