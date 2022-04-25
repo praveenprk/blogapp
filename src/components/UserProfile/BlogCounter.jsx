@@ -17,6 +17,8 @@ const Counter = () => {
       getBlogCount()
     }, [])
 
+    console.log(count)
+
   return (
     <Stack className='counter-sq' sx={{
         backgroundColor: 'white',
@@ -41,4 +43,4 @@ const Counter = () => {
   )
 }
 
-export default Counter
+export default React.memo(Counter)

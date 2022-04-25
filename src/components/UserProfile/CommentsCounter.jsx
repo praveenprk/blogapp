@@ -17,6 +17,7 @@ const CommentsCounter = () => {
       getCommentsCount()
     }, [])
 
+    console.log(count)
 
   return (
     <Stack className='counter-sq' sx={{
@@ -42,4 +43,4 @@ const CommentsCounter = () => {
   )
 }
 
-export default CommentsCounter
+export default React.memo(CommentsCounter)

@@ -43,4 +43,4 @@ const AlbumsCounter = () => {
   )
 }
 
-export default AlbumsCounter
+export default React.memo(AlbumsCounter)
