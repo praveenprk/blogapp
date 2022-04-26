@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
+import  blogSlice from "../features/blogs/blogs"
 import userSlice  from "../features/users/users"
 
 //creating store; this is like a box/container
@@ -8,5 +9,6 @@ import userSlice  from "../features/users/users"
 export const store = configureStore({
     reducer: {
         users: userSlice,
+        blogs: blogSlice,
     }
 })
