@@ -1,6 +1,7 @@
 import { Container, Divider } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 // import {getUserId}  from '../../functions/getUserId'
 import Comments from './Comments'
@@ -13,6 +14,8 @@ const ViewBlogPost = () => {
     const [blogPost, setBlogPost] = useState()
     const [name, setname] = useState('')
 
+    const blog = useSelector(state => state.blogs.blogs)
+    console.log(blog)
 
    const getAuthorName = (id) =>{
         axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
@@ -22,7 +25,7 @@ const ViewBlogPost = () => {
         return name
     }
     
-    const fetchBlogPost = async () => {
+    /* const fetchBlogPost = async () => {
         await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
         .then(res => 
             {
@@ -36,26 +39,10 @@ const ViewBlogPost = () => {
 
     useEffect(()=>{
         fetchBlogPost()
-    }, [])
+    }, []) */
 
     return (
-    <div>
-        {
-            blogPost && (
-                <Container sx={{
-                    padding: '1rem',
-                    margin: "0 auto",
-                    lineHeight: "2.0",
-                }}>
-                    <h1>{blogPost.title}</h1>
-                    <span><i>By&nbsp;{name}</i></span>
-                    <p>{blogPost.body}</p>
-                    <Divider/>
-                    <Comments postId={id}/>
-                </Container>
-            )
-        }
-    </div>
+    null
   )
 }
 
