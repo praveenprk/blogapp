@@ -4,16 +4,22 @@ import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import Skeleton from '@mui/material/Skeleton';
 import './BlogPostsSummary.css'
+import { useDispatch } from 'react-redux';
+import { getBlogs } from '../../features/blogs/blogs';
 
 const BlogPostsSummary = () => {
 
     const [blogPosts, setBlogPosts] = useState([])
     const [loading, setLoading] = useState(true)
+    const dispatch = useDispatch()
 
     useEffect(()=>{
         const fetchPosts = async () => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(res => setBlogPosts(res.data))
+        .then(res => {
+            setBlogPosts(res.data)
+            dispatch(getBlogs(res.data))
+        })
         .catch(err => console.log(err))
     }
     fetchPosts()
@@ -58,7 +64,7 @@ setTimeout(() => {
                         <p className='post-body'>
                             {blogPost.body}
                         </p>
-                        <Link to={`/blog/${blogPost.id}`}><span>Read More...</span></Link>
+                        <Link to={`/posts/${blogPost.id}`}><span>Read More...</span></Link>
                     </Grid>)
                 )
         })}
